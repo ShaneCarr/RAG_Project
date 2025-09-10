@@ -16,3 +16,10 @@ def answer_question(query):
         messages=[{"role": "user", "content": prompt}]
     )
     return resp['choices'][0]['message']['content']
+
+
+
+# print(answer_question("Where is Redis initialized?"))
+# print(answer_question("Explain the authentication flow."))
+#print(answer_question("Find all references to user_id."))
+
