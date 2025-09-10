@@ -1,0 +1,7 @@
+def search(query, top_k=5):
+    q_vec = embed_text(query)
+    cur.execute(
+        "SELECT file, content FROM code_chunks ORDER BY embedding <-> %s LIMIT %s",
+        (q_vec, top_k)
+    )
+    return cur.fetchall()
